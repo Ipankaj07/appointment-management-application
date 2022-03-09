@@ -24,6 +24,8 @@ html {
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
+  /* min-width: 1440px; */
+  /* max-width: 1500px; */
 }
 
 .container {
