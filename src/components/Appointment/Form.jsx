@@ -57,6 +57,7 @@ const UserForm = ({ ID }) => {
                 className="input"
                 type="text"
                 placeholder="Name"
+                required
               />
             </div>
           </div>
@@ -70,6 +71,7 @@ const UserForm = ({ ID }) => {
                 className="input"
                 type="email"
                 placeholder="Email"
+                required
               />
             </div>
           </div>
@@ -83,6 +85,7 @@ const UserForm = ({ ID }) => {
                 className="input"
                 type="text"
                 placeholder="Address"
+
               />
             </div>
           </div>
@@ -96,6 +99,7 @@ const UserForm = ({ ID }) => {
                 className="input"
                 type="text"
                 placeholder="Time"
+                required
               />
             </div>
           </div>
@@ -109,6 +113,7 @@ const UserForm = ({ ID }) => {
                 className="input"
                 type="text"
                 placeholder="Date"
+                required
               />
             </div>
           </div>
@@ -122,6 +127,7 @@ const UserForm = ({ ID }) => {
                 className="input"
                 type="text"
                 placeholder="Phone"
+                required
               />
             </div>
           </div>
@@ -135,6 +141,7 @@ const UserForm = ({ ID }) => {
                 className="input"
                 type="text"
                 placeholder="Age"
+                required
               />
             </div>
           </div>
