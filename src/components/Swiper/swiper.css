@@ -1,0 +1,37 @@
+.swiper-div {
+  min-height: 350px;
+  background: #f1f6f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-container {
+  width: 70%;
+}
+
+.swipe_img-container img {
+  width: 100%;
+}
+
+.swipe_img-container {
+  margin-bottom: 2.2rem;
+}
+
+.left-bg {
+  background: #224855;
+  position: relative;
+  width: calc((100% - 970px) / 2);
+  color: #224855;
+  height: 16.78rem;
+  top: -1.25rem;
+}
+
+.top_H-image {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.top_H-image img {
+  width: 70%;
+}
