@@ -79,25 +79,5 @@ const MidSection = ({ caterogy }) => {
     </>
   );
 };
-/* 
-  return (
-            <article className="doctor_detail">
-              <div className="doctor_img">
-                <img src={image} alt="doctor" />
-              </div>
-              <h3>{full_name}</h3>
-              <div className="spec_doctor" >
-                <h4>{speciality}</h4>
-                <h4>{experience}</h4>
-              </div>
-              <div className="aptn_doctor" >
-                <small>{availability}</small>
-                <small>{cost_per_appointment}</small>
-              <a href="#" className="btn" >BOOK APPOINTMENT</a>
-              </div>
-            </article>
-          );
-
-*/
 
 export default MidSection;

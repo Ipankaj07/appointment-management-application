@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./appointment.css";
 import { useParams } from "react-router-dom";
+import UserForm from "./Form";
+import { v4 as uuidv4 } from "uuid";
 
 const Appointment = () => {
   const [data, setData] = useState([]);
@@ -31,10 +33,32 @@ const Appointment = () => {
       });
   };
 
-  /* all about form submit */
+  // /* all about form submit */
+
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  //   phone: "",
+  //   date: "",
+  //   time: "",
+  // });
+
+  // const onChange = (e) => {
+  //   // setFormData({ ...formData, [e.target.name]: e.target.value });
+  //   let { name, value } = e.target;
+  //   setFormData((prev) => ({ ...prev, [name]: value }));
+  // };
+
+  // const { name, email, phone, date, time } = formData;
+
+  // const onSubmit = (e) => {
+  //   e.preventDefault();
+  //   // patchFormData();
+  //   console.log(formData);
+  // };
 
   /* PATCH this form data to doctor user arrays */
-  const patchFormData = async (e) => {
+  async function patchFormData(e) {
     e.preventDefault();
     const res = await fetch(
       `https://ipankaj-apollo-dbs.herokuapp.com/doctor/${id}`,
@@ -43,30 +67,12 @@ const Appointment = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ users: formData }),
+        // body: JSON.stringify({ users: formData }),
       }
     );
     const data = await res.json();
     console.log(data);
-  };
-
-  const [formData, setFormData] = useState([
-    {
-      name: "",
-      email: "",
-      phone: "",
-      date: "",
-      time: "",
-    },
-  ]);
-  const { name, email, phone, date, time } = formData;
-  const onChange = (e) =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  const onSubmit = (e) => {
-    e.preventDefault();
-    patchFormData();
-    console.log(formData);
-  };
+  }
 
   return loading ? (
     <div
@@ -125,99 +131,8 @@ const Appointment = () => {
           }
         </div>
 
-        <div className="form_container">
-          <article className="app_articl">
-            <form onSubmit={onSubmit}>
-              <div className="field">
-                <label className="label">Name</label>
-                <div className="control">
-                  <input
-                    value={name}
-                    onChange={onChange}
-                    className="input"
-                    type="text"
-                    placeholder="Name"
-                  />
-                </div>
-              </div>
-              <div className="field">
-                <label className="label">Email</label>
-                <div className="control">
-                  <input
-                    value={email}
-                    onChange={onChange}
-                    className="input"
-                    type="email"
-                    placeholder="Email"
-                  />
-                </div>
-              </div>
-              <div className="field">
-                <label className="label">Address</label>
-                <div className="control">
-                  <input className="input" type="text" placeholder="Address" />
-                </div>
-              </div>
-              <div className="field">
-                <label className="label">Time</label>
-                <div className="control">
-                  <input
-                    value={time}
-                    onChange={onChange}
-                    className="input"
-                    type="text"
-                    placeholder="Time"
-                  />
-                </div>
-              </div>
-              <div className="field">
-                <label className="label">Date</label>
-                <div className="control">
-                  <input
-                    value={date}
-                    onChange={onChange}
-                    className="input"
-                    type="text"
-                    placeholder="Date"
-                  />
-                </div>
-              </div>
-              <div className="field">
-                <label className="label">Phone</label>
-                <div className="control">
-                  <input
-                    value={phone}
-                    onChange={onChange}
-                    className="input"
-                    type="text"
-                    placeholder="Phone"
-                  />
-                </div>
-              </div>
-              <div className="field">
-                <label className="label">Age</label>
-                <div className="control">
-                  <input className="input" type="text" placeholder="Age" />
-                </div>
-              </div>
-              <div className="field">
-                <label className="label">
-                  <input type="checkbox" />
-                  <span style={{ marginLeft: "0.5rem" }}>
-                    I agree to the Terms and Conditions
-                  </span>
-                </label>
-              </div>
-              <div className="field">
-                <div className="control">
-                  <button className=" btn btn-primary button is-link">
-                    Submit
-                  </button>
-                </div>
-              </div>
-            </form>
-          </article>
-        </div>
+        {/* send _id */}
+        <UserForm key={uuidv4()} ID={id} />
       </div>
     </>
   );
