@@ -54,36 +54,39 @@ function AppointHistory() {
       <div className="appoint-history container">
         {appointments.map((appointment) => (
           <article className="appoint-history-card" key={appointment._id}>
-            <div
-              onClick={() => {
-                handleClick(appointment._id);
-              }}
-            >
-              <img
-                src={appointment.image}
-                style={{ width: "100px", borderRadius: "50%" }}
-                alt=""
-              />
-              <h3 className="appoint-title">{appointment.full_name}</h3>
-              <div className="appoint-history-card-body">
-                <p className="appoint-history-card-body-text">
-                  {appointment.availability[0]}
-                </p>
-                <p className="appoint-body-text">
-                  {appointment.availability[1]}
-                </p>
-                <p className="appoint-history-card-body-text">
-                  {appointment.phone}
-                </p>
+            <a href="#user">
+              <div
+                style={{ cursor: "pointer" }}
+                onClick={() => {
+                  handleClick(appointment._id);
+                }}
+              >
+                <img
+                  src={appointment.image}
+                  style={{ width: "100px", borderRadius: "50%" }}
+                  alt=""
+                />
+                <h3 className="appoint-title">{appointment.full_name}</h3>
+                <div className="appoint-history-card-body">
+                  <p className="appoint-history-card-body-text">
+                    {appointment.availability[0]}
+                  </p>
+                  <p className="appoint-body-text">
+                    {appointment.availability[1]}
+                  </p>
+                  <p className="appoint-history-card-body-text">
+                    {appointment.phone}
+                  </p>
+                </div>
               </div>
-            </div>
+            </a>
           </article>
         ))}
       </div>
 
       {/* show table of users */}
       {showTable && (
-        <div className="container">
+        <div className="container user_table" id="user">
           <h1
             className="heading2"
             style={{ marginBottom: "2rem", textDecoration: "underline" }}

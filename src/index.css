@@ -12,7 +12,6 @@
 :root {
   --color-white: #fff;
   --color-light: #e6e6e6;
-  --color-bg-variant: #2c2c6c;
   --container-width: 90%;
 
   --transition: all 400ms ease;
@@ -69,4 +68,8 @@ h1 {
 .btn-primary {
   background: #4db5ff;
   color: #1f1f38;
+}
+
+a {
+  color: #333;
 }
