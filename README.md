@@ -26,6 +26,9 @@ A web application for managing appointments.
 - Clinic Page
   ![clinic page](./ScreenShots/03.png)
 
+- Appointment FIlled
+  ![appointment](./ScreenShots/06.png)
+
 - Appointment
   ![appointment](./ScreenShots/04.png)
   ![appointment](./ScreenShots/05.png)
