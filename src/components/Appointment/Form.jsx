@@ -7,12 +7,14 @@ const UserForm = ({ ID }) => {
     phone: "",
     date: "",
     time: "",
+    address: "",
+    age: "",
   };
 
   // console.log(ID);
 
   const [formData, setFormData] = useState(initialState);
-  const { name, email, phone, date, time } = formData;
+  const { name, email, address, phone, date, time, age } = formData;
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,7 +23,8 @@ const UserForm = ({ ID }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     patchFormData();
-    console.log(formData);
+    // console.log(formData);
+    setFormData(initialState);
   };
 
   async function patchFormData(e) {
@@ -73,7 +76,14 @@ const UserForm = ({ ID }) => {
           <div className="field">
             <label className="label">Address</label>
             <div className="control">
-              <input className="input" type="text" placeholder="Address" />
+              <input
+                name="address"
+                value={address}
+                onChange={onChange}
+                className="input"
+                type="text"
+                placeholder="Address"
+              />
             </div>
           </div>
           <div className="field">
@@ -118,7 +128,14 @@ const UserForm = ({ ID }) => {
           <div className="field">
             <label className="label">Age</label>
             <div className="control">
-              <input className="input" type="text" placeholder="Age" />
+              <input
+                name="age"
+                value={age}
+                onChange={onChange}
+                className="input"
+                type="text"
+                placeholder="Age"
+              />
             </div>
           </div>
           <div className="field">

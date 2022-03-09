@@ -33,47 +33,6 @@ const Appointment = () => {
       });
   };
 
-  // /* all about form submit */
-
-  // const [formData, setFormData] = useState({
-  //   name: "",
-  //   email: "",
-  //   phone: "",
-  //   date: "",
-  //   time: "",
-  // });
-
-  // const onChange = (e) => {
-  //   // setFormData({ ...formData, [e.target.name]: e.target.value });
-  //   let { name, value } = e.target;
-  //   setFormData((prev) => ({ ...prev, [name]: value }));
-  // };
-
-  // const { name, email, phone, date, time } = formData;
-
-  // const onSubmit = (e) => {
-  //   e.preventDefault();
-  //   // patchFormData();
-  //   console.log(formData);
-  // };
-
-  /* PATCH this form data to doctor user arrays */
-  async function patchFormData(e) {
-    e.preventDefault();
-    const res = await fetch(
-      `https://ipankaj-apollo-dbs.herokuapp.com/doctor/${id}`,
-      {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        // body: JSON.stringify({ users: formData }),
-      }
-    );
-    const data = await res.json();
-    console.log(data);
-  }
-
   return loading ? (
     <div
       style={{
@@ -113,7 +72,7 @@ const Appointment = () => {
           {
             <article key={data._id} className="apo_doctor_detail">
               <div className="doctor_img">
-                <img src={data.image} alt="doctor" />
+                <img src={data.image} className="image-fit" alt="doctor" />
               </div>
               <div className="apo_doctor_second">
                 <h2>{data.full_name}</h2>

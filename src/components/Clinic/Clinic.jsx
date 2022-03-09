@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./clinic.css";
+import { Link } from "react-router-dom";
 
 const Clinic = () => {
   const [data, setData] = useState([]);
@@ -140,7 +141,11 @@ const Clinic = () => {
                     <td>{item.experience}</td>
                     <td> ₹{item.cost_per_appointment}</td>
                     <td>
-                      <button>View more</button>
+                      {/* <button>View more</button> */}
+                      <Link
+                        to={`/appointment/${item._id}`}
+                        className="btn btn-primary"
+                      >View more</Link>
                     </td>
                   </tr>
                 ))}

@@ -16,7 +16,7 @@ const Header = () => {
             </Link>
             <div className="btn-gap">
               <Link to="/clinic">Clinic</Link>
-              <Link to="/">History</Link>
+              <Link to="/history">History</Link>
               <Link to="/">Login</Link>
               <Link to="/">SignUp</Link>
             </div>

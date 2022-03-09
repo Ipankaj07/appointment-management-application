@@ -65,3 +65,8 @@
 .button {
   margin-top: 0.5rem;
 }
+
+.image-fit{
+  width: 100%;
+  object-fit: cover;
+}
