@@ -41,6 +41,8 @@ const UserForm = ({ ID }) => {
     );
     const data = await res.json();
     console.log(data);
+    alert(`${name} Your Appointment Booked Successfully`);
+    window.location.Link = "/history";
   }
 
   return (
@@ -85,7 +87,6 @@ const UserForm = ({ ID }) => {
                 className="input"
                 type="text"
                 placeholder="Address"
-
               />
             </div>
           </div>
